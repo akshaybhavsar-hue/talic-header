@@ -63,9 +63,9 @@ ul {
   gap: 16px;
 }
 
-.header-navigation > .header-l0-menu {
+/* .header-navigation > .header-l0-menu {
   display: none;
-}
+} */
 
 .header-navigation > .quicklinks-tab {
   display: none;
@@ -529,17 +529,25 @@ ul {
 
   .l1-menu {
     position: absolute;
-    top: 50px;
-    left: -100px;
+    top: 57px;
+    right: 10px;
     display: none;
     width: 320px;
     padding: 20px 0px;
     background: #fff;
-    /* background-color: red; */
     box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.1);
-
     border-radius: 20px;
     z-index: 1000;
+  }
+
+  .custom-tab:hover > .l1-menu > .l1-content:first-child > .l2-menu,
+  .custom-tab:focus-within > .l1-menu > .l1-content:first-child > .l2-menu {
+    display: block;
+  }
+
+  .custom-menu-tab {
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 20px 0 0 20px;
   }
 
   .l0-tab:hover .l1-menu,
