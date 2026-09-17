@@ -33,6 +33,9 @@ img {
   display: block;
   max-width: 100%;
 }
+.mobile-l0-icon {
+  display: none;
+}
 ul {
   list-style: none;
 }
@@ -659,42 +662,13 @@ ul {
 
   .header-wrapper:has(.mobile-hamburger-menu-wrapper.open)
     .header-l0-menu
-    > .l0-tab::before {
-    content: '';
+    > .l0-tab
+    > .mobile-l0-icon {
+    display: block;
     flex-shrink: 0;
     width: 31px;
     height: 27px;
-    background: center / contain no-repeat;
-  }
-  /* icons for mobile */
-  .header-wrapper:has(.mobile-hamburger-menu-wrapper.open)
-    .header-l0-menu
-    > .l0-tab:nth-child(1)::before {
-    background-image: url('/assets/Term_insurance_icons/Term-Insurance.svg');
-  }
-
-  .header-wrapper:has(.mobile-hamburger-menu-wrapper.open)
-    .header-l0-menu
-    > .l0-tab:nth-child(2)::before {
-    background-image: url('/assets/Investment_Plans_icons/Investment-Tenure.svg');
-  }
-
-  .header-wrapper:has(.mobile-hamburger-menu-wrapper.open)
-    .header-l0-menu
-    > .l0-tab:nth-child(3)::before {
-    background-image: url('/assets/NRI_Plans_icons/NRI.svg');
-  }
-
-  .header-wrapper:has(.mobile-hamburger-menu-wrapper.open)
-    .header-l0-menu
-    > .l0-tab:nth-child(4)::before {
-    background-image: url('/assets/All_plans_icons/Cover.svg');
-  }
-
-  .header-wrapper:has(.mobile-hamburger-menu-wrapper.open)
-    .header-l0-menu
-    > .l0-tab:nth-child(5)::before {
-    background-image: url('/assets/Customer_service_icons/Contact-Us.svg');
+    object-fit: contain;
   }
 
   .header-wrapper:has(.mobile-hamburger-menu-wrapper.open)
