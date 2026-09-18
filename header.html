@@ -35,7 +35,7 @@
             <div class="header-l0-menu">
               <div class="l0-tab">
                 <img
-                  class="mobile-l0-icon"
+                  class="header-l0-icon"
                   src="/assets/Term_insurance_icons/Term-Insurance.svg"
                   alt=""
                 />
@@ -94,7 +94,7 @@
 
               <div class="l0-tab">
                 <img
-                  class="mobile-l0-icon"
+                  class="header-l0-icon"
                   src="/assets/Investment_Plans_icons/Investment-Tenure.svg"
                   alt=""
                 />
@@ -159,7 +159,7 @@
 
               <div class="l0-tab">
                 <img
-                  class="mobile-l0-icon"
+                  class="header-l0-icon"
                   src="/assets/NRI_Plans_icons/NRI.svg"
                   alt=""
                 />
@@ -216,7 +216,7 @@
               <!--all plans div  -->
               <div class="l0-tab custom-tab">
                 <img
-                  class="mobile-l0-icon"
+                  class="header-l0-icon"
                   src="/assets/All_plans_icons/Cover.svg"
                   alt=""
                 />
@@ -854,7 +854,7 @@
               <!--customer service div  -->
               <div class="l0-tab custom-tab">
                 <img
-                  class="mobile-l0-icon"
+                  class="header-l0-icon"
                   src="/assets/Customer_service_icons/Contact-Us.svg"
                   alt=""
                 />
@@ -1113,7 +1113,7 @@
                   </div>
                 </div>
               </div>
-              <div class="l0-tab mobile-tab">
+              <div class="l0-tab extra-header-l0-icon">
                 <img
                   src="/assets/Fund_Performance_icons/mob-graph.svg"
                   alt=""
@@ -1124,7 +1124,7 @@
                 <img src="/assets/icons/forward-arrow.svg" alt="" />
               </div>
 
-              <div class="l0-tab mobile-tab">
+              <div class="l0-tab extra-header-l0-icon">
                 <img
                   src="/assets/Trending_Topics_icons/Star-award-mob.svg"
                   alt=""
@@ -1135,7 +1135,7 @@
                 <img src="/assets/icons/forward-arrow.svg" alt="" />
               </div>
 
-              <div class="l0-tab mobile-tab">
+              <div class="l0-tab extra-header-l0-icon">
                 <img src="/assets/About_us_icons/person.svg" alt="" />
                 <a href="/about-us.html">
                   <p>About Us</p>
@@ -1143,9 +1143,9 @@
                 <img src="/assets/icons/forward-arrow.svg" alt="" />
               </div>
             </div>
-            <div class="mobile-hamburger-menu-wrapper">
+            <div class="hamburger-menu-wrapper">
               <!-- mobile view desktop button and icons-->
-              <div class="mobile-menu-actions">
+              <div class="actions-menu">
                 <a
                   href="https://myinsurance.tataaia.com/portfolio/login?target=50"
                   >Pay Premium</a
@@ -1554,9 +1554,7 @@
       }
 
       const hamburger = document.querySelector('.header-menu-toggle');
-      const mobileMenu = document.querySelector(
-        '.mobile-hamburger-menu-wrapper',
-      );
+      const mobileMenu = document.querySelector('.hamburger-menu-wrapper');
 
       if (hamburger && mobileMenu) {
         hamburger.setAttribute('aria-expanded', 'false');
