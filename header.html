@@ -18,16 +18,16 @@
               title="TATA AIA Logo"
             />
 
-            <img
+            <!-- <img
               class="logo-mobile-open"
               src="/assets/icons/mob-naviagtion.svg"
               alt="TATA AIA Logo"
               title="TATA AIA Logo"
-            />
+            /> -->
           </a>
-          <div class="mobile-menu-toggle">
+          <!-- <div class="mobile-menu-toggle">
             <img src="/assets/icons/Hamburger-icon.svg" alt="Menu" />
-          </div>
+          </div> -->
         </div>
 
         <div class="navbar">
@@ -1379,6 +1379,7 @@
                 </p>
               </div>
             </div>
+
             <a class="header-icon-link" href="#">
               <img src="/assets/search.svg" alt="Search" />
               <span class="icon-label">Search</span>
@@ -1397,11 +1398,11 @@
                 src="/assets/icons/Hamburger-icon.svg"
                 alt="Open menu"
               />
-              <img
+              <!-- <img
                 class="menu-icon-close"
                 src="/assets/icons/Cancel-icon.svg"
                 alt=""
-              />
+              /> -->
               <span class="icon-label">More</span>
             </a>
           </div>
@@ -1524,8 +1525,7 @@
       </div>
     </div>
     <script>
-      const header = document.querySelector('.header');
-      const hamburger = document.querySelector('.header-menu-toggle');
+      const desktopHamburger = document.querySelector('.header-menu-toggle');
       const desktopMenu = document.querySelector('.desktop-menu-wrapper');
 
       if (desktopHamburger && desktopMenu) {
@@ -1549,12 +1549,6 @@
       if (hamburger && mobileMenu) {
         hamburger.setAttribute('aria-expanded', 'false');
 
-        const toggleIcon = hamburger.querySelector('img');
-        const iconOpen = '/assets/Hamburger-cross.svg';
-        const iconClosed = '/assets/icons/Hamburger-icon.svg';
-        const mobileMenu = document.querySelector(
-          '.mobile-hamburger-menu-wrapper',
-        );
         const siteActions = document.querySelector('.site-header-actions');
         const callUsTab = document.querySelector('.call-us-tab');
         const callUsTrigger = document.querySelector('.header-icon-link');
