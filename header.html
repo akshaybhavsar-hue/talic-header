@@ -1115,6 +1115,7 @@
               </div>
               <div class="l0-tab mobile-tab">
                 <img
+                  class="mobile-l0-icon"
                   src="/assets/Fund_Performance_icons/mob-graph.svg"
                   alt=""
                 />
@@ -1126,6 +1127,7 @@
 
               <div class="l0-tab mobile-tab">
                 <img
+                  class="mobile-l0-icon"
                   src="/assets/Trending_Topics_icons/Star-award-mob.svg"
                   alt=""
                 />
@@ -1136,7 +1138,7 @@
               </div>
 
               <div class="l0-tab mobile-tab">
-                <img src="/assets/About_us_icons/person.svg" alt="" />
+                <img class="mobile-l0-icon" src="/assets/About_us_icons/person.svg" alt="" />
                 <a href="/about-us.html">
                   <p>About Us</p>
                 </a>
@@ -1534,11 +1536,15 @@
             </div>
           </div>
         </div>
+
+        <img class="close-btn" src="/assets/icons/Cancel-icon.svg" alt="Close menu" />
+
       </div>
     </div>
     <script>
       const desktopHamburger = document.querySelector('.header-menu-toggle');
       const desktopMenu = document.querySelector('.desktop-menu-wrapper');
+      const CloseBtn = document.querySelector('.close-btn');
 
       if (desktopHamburger && desktopMenu) {
         desktopHamburger.setAttribute('aria-expanded', 'false');
@@ -1595,6 +1601,20 @@
             toggleIcon.alt = isOpen ? 'Close menu' : 'Open menu';
           }
         });
+
+        if(CloseBtn) {
+          CloseBtn.addEventListener('click', function () {
+            mobileMenu.classList.remove('open');
+            hamburger.setAttribute('aria-expanded', 'false');
+
+            document.body.style.overflow = '';
+
+            const toggleIcon = hamburger.querySelector('img');
+            if (toggleIcon) {
+              toggleIcon.alt = 'Open menu';
+            }
+          })
+        }
       }
     </script>
   </body>

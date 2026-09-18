@@ -40,6 +40,10 @@ ul {
   list-style: none;
 }
 
+.close-btn {
+  display: none;
+}
+
 .call-us-btn--outline {
   border: 1px solid #0073bb;
   color: #0073bb;
@@ -99,11 +103,7 @@ ul {
     gap: 5%;
   }
 
-  .logo-mobile {
-    display: none;
-  }
-
-  .logo-desktop {
+  .main-logo {
     display: block;
     width: 184px;
     height: 40px;
@@ -749,9 +749,7 @@ ul {
     .site-header-actions {
     display: none;
   }
-  /* .main-logo {
-    display: none;
-  } */
+
   /* ---------- Collapsed header bar ---------- */
   .header-wrapper {
     position: sticky;
@@ -788,6 +786,17 @@ ul {
     flex-direction: column;
     align-items: stretch;
     margin-left: 0;
+  }
+
+  .header-wrapper:has(.mobile-hamburger-menu-wrapper.open) .close-btn {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    z-index: 10001;
   }
 
   .logo-mobile {
