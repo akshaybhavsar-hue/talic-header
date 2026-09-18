@@ -1537,58 +1537,62 @@
       </div>
     </div>
     <script>
-      const desktopHamburger = document.querySelector(".header-menu-toggle");
-      const desktopMenu = document.querySelector(".desktop-menu-wrapper");
+      const desktopHamburger = document.querySelector('.header-menu-toggle');
+      const desktopMenu = document.querySelector('.desktop-menu-wrapper');
 
       if (desktopHamburger && desktopMenu) {
-        desktopHamburger.setAttribute("aria-expanded", "false");
+        desktopHamburger.setAttribute('aria-expanded', 'false');
 
-        desktopHamburger.addEventListener("click", function () {
-          const isOpen = desktopMenu.classList.toggle("open");
-          desktopHamburger.setAttribute("aria-expanded", String(isOpen));
-          const toggleIcon = desktopHamburger.querySelector("img");
+        desktopHamburger.addEventListener('click', function () {
+          const isOpen = desktopMenu.classList.toggle('open');
+          desktopHamburger.setAttribute('aria-expanded', String(isOpen));
+          const toggleIcon = desktopHamburger.querySelector('img');
           if (toggleIcon) {
-            toggleIcon.alt = isOpen ? "Close menu" : "Open menu";
+            toggleIcon.alt = isOpen ? 'Close menu' : 'Open menu';
           }
         });
       }
 
-      const hamburger = document.querySelector(".mobile-menu-toggle");
+      const hamburger = document.querySelector('.header-menu-toggle');
+      const mobileMenu = document.querySelector(
+        '.mobile-hamburger-menu-wrapper',
+      );
 
       if (hamburger && mobileMenu) {
-        hamburger.setAttribute("aria-expanded", "false");
+        hamburger.setAttribute('aria-expanded', 'false');
 
-        const siteActions = document.querySelector(".site-header-actions");
-        const callUsTab = document.querySelector(".call-us-tab");
-        const callUsTrigger = document.querySelector(".header-icon-link");
-        const callUsCloseBtn = document.querySelector(".call-us-close-btn");
+        const siteActions = document.querySelector('.site-header-actions');
+        const callUsTab = document.querySelector('.call-us-tab');
+        const callUsTrigger = document.querySelector('.header-icon-link');
+        const callUsCloseBtn = document.querySelector('.call-us-close-btn');
 
-        callUsTrigger.addEventListener("click", function (e) {
+        callUsTrigger.addEventListener('click', function (e) {
           e.preventDefault();
-          callUsTab.classList.toggle("open");
+          callUsTab.classList.toggle('open');
         });
 
         document
-          .querySelectorAll(".call-us-col, .call-us-existing-policy")
+          .querySelectorAll('.call-us-col, .call-us-existing-policy')
           .forEach(function (section) {
-            const heading = section.querySelector("h4");
-            heading.addEventListener("click", function () {
-              section.classList.toggle("open");
+            const heading = section.querySelector('h4');
+            heading.addEventListener('click', function () {
+              section.classList.toggle('open');
             });
           });
 
-        callUsCloseBtn.addEventListener("click", function (e) {
+        callUsCloseBtn.addEventListener('click', function (e) {
           e.stopPropagation();
-          callUsTab.classList.remove("open");
+          callUsTab.classList.remove('open');
         });
 
-        hamburger.addEventListener("click", function () {
-          const isOpen = mobileMenu.classList.toggle("open");
-          hamburger.setAttribute("aria-expanded", String(isOpen));
-          document.body.style.overflow = isOpen ? "hidden" : "";
+        hamburger.addEventListener('click', function () {
+          const isOpen = mobileMenu.classList.toggle('open');
+          hamburger.setAttribute('aria-expanded', String(isOpen));
+          document.body.style.overflow = isOpen ? 'hidden' : '';
+          const toggleIcon = hamburger.querySelector('img');
+
           if (toggleIcon) {
-            toggleIcon.src = isOpen ? iconOpen : iconClosed;
-            toggleIcon.alt = isOpen ? "Close menu" : "Open menu";
+            toggleIcon.alt = isOpen ? 'Close menu' : 'Open menu';
           }
         });
       }
