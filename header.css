@@ -8,7 +8,7 @@
   --clr-border: #e6e8ec;
   --clr-icon-bg: #eaf2fb;
   --font: 'Inter', Arial, Helvetica, sans-serif;
-  --header-height: 40px;
+  --header-height: 63px;
 }
 
 *,
@@ -32,6 +32,27 @@ a {
 img {
   display: block;
   max-width: 100%;
+}
+ul {
+  list-style: none;
+}
+
+/* ===================== MOBILE (base) ===================== */
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 4px;
+}
+
+img {
+  display: block;
+  /* max-width: 100%; */
+}
+.mobile-l0-icon {
+  display: none;
 }
 .mobile-l0-icon {
   display: none;
@@ -66,16 +87,21 @@ ul {
     padding: 0;
     max-width: 1366px;
     gap: 5%;
+    box-shadow: none;
+    height: 68px;
   }
 
-  .logo-mobile {
+  .main-logo {
+    width: 184px;
+    height: 40px;
+  }
+
+  .header.menu-open .logo-mobile-open {
     display: none;
   }
 
-  .logo-desktop {
+  .header.menu-open .main-logo {
     display: block;
-    width: 184px;
-    height: 40px;
   }
 
   .navbar {
@@ -120,10 +146,29 @@ ul {
     color: #0073bb;
   }
 
-  .site-header-actions {
+  .site-header-actions .header-icon-link,
+  .call-us-tab .header-icon-link,
+  .header-menu-toggle {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 14px;
+    gap: 4px;
+    width: auto;
+    height: auto;
+  }
+
+  .icon-label {
+    display: none;
+  }
+
+  .site-header-actions .header-icon-link,
+  .call-us-tab .header-icon-link,
+  .header-menu-toggle {
+    flex-direction: row;
+  }
+
+  .site-header-actions .header-cta-group {
+    display: flex;
   }
 
   .header-cta-group {
@@ -163,9 +208,14 @@ ul {
     padding: 0;
     border: 0;
   }
-  .site-header-actions .header-icon-link img {
-    width: 24px;
-    height: 24px;
+
+  .site-header-actions.menu-open > *:not(.header-menu-toggle) {
+    display: block;
+  }
+
+  .site-header-actions > :nth-child(5),
+  .site-header-actions > :nth-child(6) {
+    margin-left: 0;
   }
 
   .header-navigation {
@@ -331,9 +381,18 @@ ul {
     border-radius: 20px;
     z-index: 1000;
   }
-
   .custom-tab:hover > .l1-menu > .l1-content:first-child > .l2-menu,
   .custom-tab:focus-within > .l1-menu > .l1-content:first-child > .l2-menu {
+    display: block;
+  }
+
+  .custom-menu-tab {
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 20px 0 0 20px;
+  }
+
+  .l0-tab:hover .l1-menu,
+  .l0-tab:focus-within .l1-menu {
     display: block;
   }
 
@@ -883,5 +942,211 @@ ul {
     img {
     width: 32px;
     height: 32px;
+  }
+}
+
+@media (min-width: 767px) {
+  .call-us-tab {
+    position: relative;
+  }
+
+  .call-us-tab:hover {
+    display: block;
+  }
+
+  .call-us-menu {
+    position: absolute;
+    column-gap: 20px;
+    padding: 20px 20px 12px 20px;
+    background: #f2f7fb;
+    filter: drop-shadow(0 0 14px rgba(0, 115, 187, 0.25));
+    border-radius: 8px;
+    top: 35px;
+    right: -100px;
+    z-index: 1;
+    width: 860px;
+    display: none;
+    flex-wrap: wrap;
+  }
+
+  .call-us-tab:hover .call-us-menu,
+  .call-us-tab:focus-within .call-us-menu {
+    display: flex;
+  }
+
+  .call-us-col-wrapper {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    align-items: stretch;
+  }
+
+  .call-us-new-policy-group {
+    display: flex;
+    position: relative;
+    flex: 2;
+    padding: 20px 15px 12px 15px;
+    background: #fff;
+    border: 1px solid #daeef8;
+    border-radius: 8px;
+  }
+
+  .call-us-existing-policy {
+    flex: 1;
+    padding: 20px 15px 12px 15px;
+    background: #fff;
+    border: 1px solid #daeef8;
+    border-radius: 8px;
+  }
+
+  .call-us-num p:first-child {
+    display: block;
+  }
+
+  .call-us-new-policy-group .call-us-col,
+  .call-us-new-policy-group .call-us-col--nri {
+    flex: 1;
+    border: none;
+    padding: 0;
+    background: transparent;
+  }
+
+  .call-us-new-policy-group .call-us-col {
+    padding-right: 18px;
+  }
+
+  .call-us-new-policy-group .call-us-col--nri > h4,
+  .call-us-new-policy-group .call-us-col--nri > .call-us-question {
+    display: none; /* only one heading/question shown, matching the merged card */
+  }
+
+  .call-us-new-policy-group .call-us-col--nri .call-us-subcols {
+    margin-top: 68px;
+  }
+
+  .call-us-new-policy-group::after {
+    content: '';
+    position: absolute;
+    width: 1.5px;
+    height: calc(100% - 32px);
+    top: 16px;
+    left: 50%;
+    background: radial-gradient(
+      1620031.19% 50% at 50% 50%,
+      #0073bb 0,
+      rgba(0, 115, 187, 0) 100%
+    );
+  }
+
+  .call-us-col h4,
+  .call-us-existing-policy h4 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #0073bb;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  .call-us-col h4 img {
+    width: 18px;
+    height: 18px;
+  }
+
+  .call-us-arrow {
+    display: none;
+  }
+
+  .call-us-question {
+    color: #333;
+    font-size: 0.875rem;
+    line-height: normal;
+    font-weight: 400;
+    margin-bottom: 20px;
+  }
+
+  .call-us-subcols {
+    position: relative;
+    display: flex;
+  }
+
+  .call-us-menu > p:first-child {
+    display: none;
+  }
+
+  .call-us-subcol {
+    flex: 1;
+    padding-left: 18px;
+    padding-right: 0;
+  }
+
+  .call-us-num {
+    margin-bottom: 15px;
+  }
+
+  .call-us-num:last-child {
+    margin-bottom: 0;
+  }
+
+  .call-us-label {
+    color: #58595b;
+    /* font-size: .875rem; */
+    line-height: normal;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .call-us-label--red {
+    color: var(--clr-red);
+  }
+
+  .call-us-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 10px 8px 20px;
+    gap: 8px;
+    width: 100%;
+    height: 44px;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .call-us-btn span {
+    font-size: 1rem;
+    line-height: normal;
+    font-weight: 500;
+  }
+
+  .call-us-close-btn {
+    display: none;
+  }
+
+  .call-us-callback {
+    color: #58595b;
+    font-size: 0.875rem;
+    line-height: normal;
+    font-weight: 700;
+    margin-bottom: 15px;
+    white-space: nowrap;
+  }
+
+  .call-us-note {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 100%;
+    color: #58595b;
+    margin-top: 8px;
+    letter-spacing: -0.12px;
+  }
+
+  .call-us-note span {
+    font-weight: 700;
+    font-size: 12px;
+    font-style: italic;
+    line-height: 100%;
+    color: #58595b;
   }
 }
